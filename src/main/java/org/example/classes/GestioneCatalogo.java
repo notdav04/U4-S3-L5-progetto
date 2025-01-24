@@ -56,6 +56,16 @@ public class GestioneCatalogo {
         System.out.println("----------------------------------------------");
 
     }
+    public void saveUser(Utente u){
+        em.getTransaction().begin();
+        em.persist(u);
+        em.getTransaction().commit();
+    }
+    public void savePrestito(Prestito p){
+        em.getTransaction().begin();
+        em.persist(p);
+        em.getTransaction().commit();
+    }
 }
 
 

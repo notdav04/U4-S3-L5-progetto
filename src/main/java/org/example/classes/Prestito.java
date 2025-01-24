@@ -34,18 +34,18 @@ public class Prestito {
     @Column(name = "data_restituzione_effettiva")
     private LocalDate dataRestituzioneEffettiva;
 
-    // Costruttore vuoto obbligatorio per JPA
+
     public Prestito() {}
 
-    // Costruttore parametrizzato
-    public Prestito(Utente utente, List<ElementoCatalogo> elementiCatalogo, LocalDate dataInizioPrestito) {
+
+    public Prestito(Utente utente, List<ElementoCatalogo> elementiCatalogo, LocalDate dataInizioPrestito, LocalDate dataRestituzionePrevista, LocalDate dataRestituzioneEffettiva) {
         this.utente = utente;
         this.elementiCatalogo = elementiCatalogo;
         this.dataInizioPrestito = dataInizioPrestito;
-        this.dataRestituzionePrevista = dataInizioPrestito.plusDays(30);
+        this.dataRestituzionePrevista = dataRestituzionePrevista;
+        this.dataRestituzioneEffettiva = dataRestituzioneEffettiva;
     }
 
-    // Getter e Setter
     public Long getId() {
         return id;
     }
