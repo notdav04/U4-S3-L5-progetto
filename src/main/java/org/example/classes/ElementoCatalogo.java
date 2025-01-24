@@ -14,9 +14,9 @@ private long id;
     private String isbn;
 @Column(nullable = false)
     private String titolo;
-    @Column(nullable = false)
+    @Column( name="anno_pubblicazione",nullable = false)
     private int annoPubblicazione;
-    @Column(nullable = false)
+    @Column(name="numero_pagine",nullable = false)
     private int numeroPagine;
 public ElementoCatalogo(){};
     public ElementoCatalogo(String isbn, String titolo, int annoPubblicazione, int numeroPagine) {

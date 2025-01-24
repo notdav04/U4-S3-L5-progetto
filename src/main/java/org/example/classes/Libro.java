@@ -14,8 +14,8 @@ public class Libro extends ElementoCatalogo{
 
     public Libro(String isbn, String titolo, int annoPubblicazione, int numeroPagine, String autore, String genere) {
         super(isbn, titolo, annoPubblicazione, numeroPagine);
-        this.autore = autore;
-        this.genere = genere;
+        this.autore = autore.toUpperCase();
+        this.genere = genere.toUpperCase();
     }
 
     public String getAutore() {
