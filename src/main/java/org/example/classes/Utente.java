@@ -55,4 +55,14 @@ public class Utente {
     public void setTessera(long tessera) {
         this.tessera = tessera;
     }
+
+    @Override
+    public String toString() {
+        return "Utente{" +
+                "tessera=" + tessera +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'' +
+                ", dataDiNascita=" + dataDiNascita +
+                '}';
+    }
 }

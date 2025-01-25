@@ -1,13 +1,11 @@
 package org.example.classes;
 
-import javax.persistence.Column;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@Entity
 @Table(name = "riviste")
 public class Rivista extends ElementoCatalogo{
-    @Column(nullable = false)
+
     @Enumerated(EnumType.STRING)
     private Periodicita periodicita;
 

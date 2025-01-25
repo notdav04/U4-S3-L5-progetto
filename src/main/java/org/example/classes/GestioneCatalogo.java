@@ -66,6 +66,19 @@ public class GestioneCatalogo {
         em.persist(p);
         em.getTransaction().commit();
     }
+    public void prestitiTessera(long tessera){
+        List<ElementoCatalogo> results = em.createQuery("SELECT e FROM Prestito p JOIN p.elementiCatalogo e WHERE p.utente.tessera = :tessera AND p.dataRestituzioneEffettiva IS NULL", ElementoCatalogo.class).setParameter("tessera", tessera).getResultList();
+        System.out.println("ricerca elementi non restituiti per tessera: " );
+        results.forEach(ele-> System.out.println(ele));
+        System.out.println("----------------------------------------------");
+    }
+    public void prestitiScaduti(){
+        LocalDate today = LocalDate.now();
+        List<Prestito> results = em.createQuery("SELECT p FROM Prestito p WHERE p.dataRestituzioneEffettiva IS NULL AND p.dataRestituzionePrevista < :today", Prestito.class).setParameter("today", today).getResultList();
+        System.out.println("ricerca prestiti scaduti e non restituiti: " );
+        results.forEach(ele-> System.out.println(ele));
+        System.out.println("----------------------------------------------");
+    }
 }
 
 

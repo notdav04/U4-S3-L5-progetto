@@ -3,7 +3,7 @@ package org.example.classes;
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "tipo_elemento", discriminatorType = DiscriminatorType.STRING)
 @Table(name="elementi_bibliotecari")
 public abstract class ElementoCatalogo {
