@@ -57,4 +57,15 @@ public ElementoCatalogo(){};
     public void setNumeroPagine(int numeroPagine) {
         this.numeroPagine = numeroPagine;
     }
+
+    @Override
+    public String toString() {
+        return "ElementoCatalogo{" +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", titolo='" + titolo + '\'' +
+                ", annoPubblicazione=" + annoPubblicazione +
+                ", numeroPagine=" + numeroPagine +
+                '}';
+    }
 }

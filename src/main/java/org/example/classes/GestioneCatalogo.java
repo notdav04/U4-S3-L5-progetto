@@ -50,7 +50,7 @@ public class GestioneCatalogo {
         System.out.println("----------------------------------------------");
     }
     public void searchTitle(String titolo){
-        List<ElementoCatalogo> results = em.createQuery("SELECT e FROM ElementoCatalogo e WHERE e.titolo LIKE :titoloInizio OR e.titolo LIKE :titoloCentrale OR e.titolo LIKE :titoloFine ", ElementoCatalogo.class).setParameter("titoloInizio", titolo + "%").setParameter("titoloCentrale", "%"+titolo+"%").setParameter("titoloFine", "%" + titolo).getResultList();
+        List<ElementoCatalogo> results = em.createQuery("SELECT e FROM ElementoCatalogo e WHERE e.titolo LIKE :titoloCentrale ", ElementoCatalogo.class).setParameter("titoloCentrale", "%"+titolo+"%").getResultList();
         System.out.println("ricerca elemento per titolo o parte del titolo: " );
         results.forEach(ele-> System.out.println(ele));
         System.out.println("----------------------------------------------");

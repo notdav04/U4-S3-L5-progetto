@@ -34,6 +34,7 @@ public class Main
     Prestito p1 = new Prestito(u1, list1, LocalDate.of(2023, 2, 15),LocalDate.of(2023, 3, 15), LocalDate.of(2023, 3, 1) );
     Prestito p2 = new Prestito(u2, list2, LocalDate.of(2023, 4, 10), LocalDate.of(2023, 5, 10), LocalDate.of(2023, 5, 5));
     Prestito p3 = new Prestito(u1, list2, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 7, 1), null);
+
 //SALVATAGGIO ELEMENTI
 //        gc.saveEle(l1);
 //        gc.saveEle(l2);
@@ -49,10 +50,10 @@ public class Main
 
         //MEDOTI RICHIESTI
 //    gc.deleteEle("109");
-//    gc.searchEle("108");
-//        gc.searchYear(2004);
-//        gc.searchAutore("J.K. Rowling");
-//        gc.searchTitle("h");
+    gc.searchEle("100-a");
+        gc.searchYear(2006);
+        gc.searchAutore("J.K. Rowling");
+        gc.searchTitle("h");
 //        gc.prestitiTessera(u1.getTessera());
 //        gc.prestitiScaduti();
     gc.close();
