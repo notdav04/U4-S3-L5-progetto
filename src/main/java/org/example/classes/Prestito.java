@@ -19,9 +19,9 @@ public class Prestito {
 
     @ManyToMany
     @JoinTable(
-            name = "prestito_catalogo",
+            name = "prestito_elementicatalogo",
             joinColumns = @JoinColumn(name = "prestito_id"),
-            inverseJoinColumns = @JoinColumn(name = "catalogo_id")
+            inverseJoinColumns = @JoinColumn(name = "elementocatalogo_id")
     )
     private List<ElementoCatalogo> elementiCatalogo;
 

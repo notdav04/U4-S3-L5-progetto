@@ -8,7 +8,7 @@ import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.util.List;
 
-public class GestioneCatalogo {
+public class GestioneCatalogoDAO {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("saveEle");
     private EntityManager em = emf.createEntityManager();
     public void saveEle(ElementoCatalogo ele){
@@ -25,7 +25,13 @@ public class GestioneCatalogo {
     }
 
     public void deleteEle(String isbn){
+        //ho usato questo approccio perche nell eliminazione mi diceva che non era possibile eliminare un elemento in quanto ancora presente nella tabella middle prestito_elementicatalogo
+
         em.getTransaction().begin();
+
+        em.createNativeQuery("DELETE FROM prestito_elementicatalogo WHERE elementocatalogo_id = (SELECT id FROM elementi_bibliotecari WHERE isbn = :isbn)")
+                .setParameter("isbn", isbn)
+                .executeUpdate();
         em.createQuery("DELETE FROM ElementoCatalogo e WHERE e.isbn = :isbn").setParameter("isbn", isbn).executeUpdate();
         em.getTransaction().commit();
     }

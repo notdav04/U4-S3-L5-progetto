@@ -1,5 +1,5 @@
 package org.example.classes;
-
+import java.util.List;
 import javax.persistence.*;
 import java.time.LocalDate;
 @Entity
@@ -18,7 +18,9 @@ private long id;
     private int annoPubblicazione;
     @Column(name="numero_pagine",nullable = false)
     private int numeroPagine;
-public ElementoCatalogo(){};
+
+
+    public ElementoCatalogo(){};
     public ElementoCatalogo(String isbn, String titolo, int annoPubblicazione, int numeroPagine) {
         this.isbn = isbn;
         this.titolo = titolo;

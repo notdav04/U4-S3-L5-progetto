@@ -13,7 +13,7 @@ import java.util.List;
 public class Main 
 {
     public static void main( String[] args ) {
-    GestioneCatalogo gc = new GestioneCatalogo();
+    GestioneCatalogoDAO gc = new GestioneCatalogoDAO();
     Libro l1 = new Libro("100-a","harry potter", 2006,500,"J.K. Rowling", "Fantasy" );
     Libro l2 = new Libro("101-b", "The Hobbit", 1937, 310, "J.R.R. Tolkien", "Fantasy");
     Libro l3 = new Libro("102-c", "1984", 1949, 328, "George Orwell", "Dystopian");
@@ -49,12 +49,19 @@ public class Main
 //    gc.savePrestito(p3);
 
         //MEDOTI RICHIESTI
-//    gc.deleteEle("109");
-    gc.searchEle("100-a");
-        gc.searchYear(2006);
-        gc.searchAutore("J.K. Rowling");
-        gc.searchTitle("h");
-//        gc.prestitiTessera(u1.getTessera());
+        //eliminazione elemento dato l isbn
+    gc.deleteEle("100-a");
+    //ricerca elemento per isbn
+//    gc.searchEle("105-f");
+        //ricerca elemento per anno
+//        gc.searchYear(2003);
+        //ricerac elemento per autore
+//        gc.searchAutore("J.K. Rowling");
+        //ricerca per titolo o parte di esso
+//        gc.searchTitle("h");
+        //ricerca dei prestiti associati a una tessera
+        gc.prestitiTessera(u1.getTessera());
+        //ricerca prestiti scaduti
 //        gc.prestitiScaduti();
     gc.close();
     }
