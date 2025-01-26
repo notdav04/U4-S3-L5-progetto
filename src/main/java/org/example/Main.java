@@ -51,18 +51,25 @@ public class Main
         //MEDOTI RICHIESTI
         //eliminazione elemento dato l isbn
     gc.deleteEle("100-a");
+
     //ricerca elemento per isbn
 //    gc.searchEle("105-f");
+
         //ricerca elemento per anno
 //        gc.searchYear(2003);
+
         //ricerac elemento per autore
 //        gc.searchAutore("J.K. Rowling");
+
         //ricerca per titolo o parte di esso
 //        gc.searchTitle("h");
+
         //ricerca dei prestiti associati a una tessera
         //gc.prestitiTessera(1);
+
         //ricerca prestiti scaduti
 //        gc.prestitiScaduti();
+
     gc.close();
     }
 }
