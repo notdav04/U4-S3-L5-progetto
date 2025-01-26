@@ -60,7 +60,7 @@ public class Main
         //ricerca per titolo o parte di esso
 //        gc.searchTitle("h");
         //ricerca dei prestiti associati a una tessera
-        gc.prestitiTessera(u1.getTessera());
+        //gc.prestitiTessera(1);
         //ricerca prestiti scaduti
 //        gc.prestitiScaduti();
     gc.close();
